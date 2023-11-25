@@ -13,6 +13,7 @@ fileSelector.onchange = () => {
 
 // now start text recognition
 start.onclick = () => {
+    console.log("converting...")
     textarea.innerHTML = ''
     const rec = new Tesseract.TesseractWorker()
     rec.recognize(fileSelector.files[0])
@@ -27,4 +28,5 @@ start.onclick = () => {
             textarea.innerHTML = data.text
             progress.innerHTML = 'Done'
         })
+        console.log("done")
 }
